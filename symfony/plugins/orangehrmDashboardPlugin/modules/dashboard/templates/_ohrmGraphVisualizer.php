@@ -7,7 +7,18 @@
 <?php
 $chartProperties = $chart->getProperties();
 ?>
-
+<style type="text/css">
+    .titleDistribution {
+        padding: 1rem;
+        font-size: 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+</style>
+<div class="titleDistribution">
+    <?php echo __('Employee Distribution by Subunit'); ?>
+</div>
 <?php
 if ($chart->hasData() || $chart->showEmptyGraph()):
     $divId = 'div_graph_display_' . $chart->getChartNumber();
