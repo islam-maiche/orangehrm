@@ -10,12 +10,12 @@ $loginImage = sfConfig::get('sf_web_dir') . DIRECTORY_SEPARATOR . sfConfig::get(
 </div>
 
 <div id="divLogin">
-    <div id="divLogo">
-        <img src="<?php echo "{$imagePath}/logo.png"; ?>" />
+    <div id="divCompanyName">
+        <?php echo __('OrangeHRM'); ?>
     </div>
-    <div id="divLoginImageContainer">
-        <div id="divLoginImage"><?php echo
-            file_get_contents($loginImage);?>
+    <div id="divLoginContainer">
+        <div id="divLoginTitle">
+            Connectez-vous
         </div>
         <div id="divLoginForm">
             <form id="frmLogin" method="post" action="<?php echo url_for('auth/validateCredentials'); ?>">
@@ -24,7 +24,6 @@ $loginImage = sfConfig::get('sf_web_dir') . DIRECTORY_SEPARATOR . sfConfig::get(
                 <?php
                     echo $form->renderHiddenFields(); // rendering csrf_token
                 ?>
-                <div id="logInPanelHeading"><?php echo __('LOGIN Panel'); ?></div>
 
                 <div id="divUsername" class="textInputContainer">
                     <?php echo $form['Username']->render(); ?>
@@ -40,7 +39,7 @@ $loginImage = sfConfig::get('sf_web_dir') . DIRECTORY_SEPARATOR . sfConfig::get(
                     ));
                     ?></div>
                 <div id="divLoginButton">
-                    <input type="submit" name="Submit" class="button" id="btnLogin" value="<?php echo __('LOGIN'); ?>" />
+                    <input type="submit" name="Submit" class="button" id="btnLogin" value="<?php echo __('SE CONNECTER'); ?>" />
                     <?php if (!empty($message)) : ?>
                     <span id="spanMessage"><?php echo __($message); ?></span>
                     <?php endif; ?>
@@ -55,13 +54,6 @@ $loginImage = sfConfig::get('sf_web_dir') . DIRECTORY_SEPARATOR . sfConfig::get(
 
 </div>
 
-<div style="text-align: center">
-    <?php include_component('core', 'ohrmPluginPannel', array(
-                'location' => 'other-login-mechanisms',
-            )); ?>
-</div>
-
-<?php include_partial('global/footer_copyright_social_links'); ?>
 
 <script type="text/javascript">
     
@@ -78,7 +70,7 @@ $loginImage = sfConfig::get('sf_web_dir') . DIRECTORY_SEPARATOR . sfConfig::get(
     }
             
     function removeHint() {
-       $('.form-hint').css('display', 'none');
+    //    $('.form-hint').css('display', 'none');
     }
     
     function showMessage(message) {

@@ -6,8 +6,7 @@ input:not([type="image"]) {
 
 #txtUsername {
     width: 240px;
-    border: 0px;
-    background-color: transparent;
+    background-color: transparent !important;
 }
 
 #txtPassword {
@@ -17,12 +16,9 @@ input:not([type="image"]) {
 }
 
 #forgotPasswordLink {
-    width: 270px;
-    background-color: transparent;
-    height: 20px;
-    margin-top: 1px;
-    margin-right: 0px;
-    margin-bottom: 0px;
+    width: auto;
+    margin: 1rem;
+    margin-bottom: 1.5rem;
 }
 
 .loginSuccessMessage {
@@ -40,9 +36,16 @@ stop.outer {
     stop-color: #c08117; /*$login-logo-outer-color;*/
 }
 
+html {
+    height: 100%;
+    width: 100%;
+}
+
 body {
+    min-height: 100%;
+    min-width: 100%;
+    background-image: linear-gradient(to top, #2972b1 0%, #5ca3e5 100%);
     background-color: #FFFFFF;
-    height: 700px;
     font-family: Roboto, Arial, Helvetica, sans-serif;
 }
 
@@ -56,7 +59,7 @@ img {
 }
 
 #wrapper {
-    min-width: 940px;
+    min-width: 100%;
     overflow: hidden;
 }
 
@@ -95,28 +98,46 @@ input:focus, select:focus, textarea:focus {
     color: #666666;
 }
 
-#divLoginImageContainer {
-    width: 1024px;
-    height: 390px;
-    margin: auto;
+#divLogin{
+    /* height: 100%; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: auto;
+    /* margin-bottom: auto; */
 }
 
-#divLoginImage {
-    width: 1024px;
-    height: 390px;
-    border-style: hidden;
+#divLoginContainer {
+    height: 100%;
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    margin: auto;
+    background-color: white;
+    margin-top: 3rem;
+}
+
+#divLoginTitle{
+    margin: 1.5rem;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 1rem;
 }
 
 #divLoginForm {
-    margin-left: 466px;
-    position: relative;
-    width: 1024px;
-    height: 390px;
-    top: -390px;
+    justify-content: center;
+    margin-top: 1rem;
 }
 
 #frmLogin {
-    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: auto;
 }
 
 input:-webkit-autofill {
@@ -133,17 +154,20 @@ input:-webkit-autofill {
 }
 
 #divUsername {
-    position: absolute;
-    top: 113px;
+    /* position: absolute; */
+    position: relative !important;
+    /* top: 113px; */
 }
 
 #divPassword {
-    position: absolute;
-    top: 164px;
+    /* position: absolute; */
+    position: relative !important;
+    margin-top: 2rem;
+    /* top: 164px; */
 }
 
 #divLoginHelpLink {
-    position: absolute;;
+    /* position: absolute;; */
     background-color: transparent;
     width: 270px;
     height: 20px;
@@ -152,36 +176,45 @@ input:-webkit-autofill {
 }
 
 #divLoginButton {
-    position: absolute;
-    top: 205px;
-    width: 350px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
 }
 
 #txtUsername, #txtPassword {
+    border-top: 0px !important;
+    border-right: 0px !important;
+    border-left: 0px !important;
+    border-bottom: 1px !important;
+    border-bottom-color: grey !important;
+    border-style: solid !important;
+    border-radius: 0px !important;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 11px;
     color: #666666;
     vertical-align: middle;
     padding-top: 0;
     width: 220px;
-    border: 0px;
     background-color: transparent;
 }
 
 #btnLogin {
     padding: 0;
     cursor: pointer;
-    width: 94px;
-    height: 26px;
+    width: 85%;
+    height: 30px;
+    margin-top: 1.5rem;
     border: none;
     color: #FFFFFF;
-    font-weight: bold;
     font-size: 13px;
     position: relative;
+    background-color: #3f51b5;
 }
 
 #btnLogin:hover {
-    background-color: transparent;
+    background-color: #586cdd;
 }
 
 #btnLogin::-moz-focus-inner {
@@ -194,10 +227,12 @@ input:-webkit-autofill {
     float: left;
 }
 
-#divLogo {
+#divCompanyName {
+    color: white;
+    font-size: 30px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     text-align: center;
     padding-top: 8px;
-    height: 180px;
 }
 
 #divLogo > img {
@@ -226,10 +261,29 @@ input:-webkit-autofill {
 }
 
 .form-hint {
-    color: #878787;
-    padding: 4px 8px;
-    position: relative;
-    left: -234px;
+    color:#999; 
+    font-size:18px;
+    font-weight:normal;
+    position:absolute;
+    pointer-events:none;
+    left:5px;
+    top:10px;
+}
+
+input:valid ~ .form-hint {
+    top:-20px;
+    font-size:14px;
+    color:#999;
+}
+
+input:focus ~ .form-hint {
+    top:-20px;
+    font-size:14px;
+    color:#5264AE;
+}
+
+#content{
+    height: 100% !important;
 }
 
 #content > div:nth-child(3) > div {
