@@ -60,16 +60,16 @@ function getHtmlId($menuItem) {
 ?>
 
 <div id="mainMenu" class="menu">
-    
+    General
     <ul id="mainMenuFirstLevelUnorderedList" class="main-menu-first-level-unordered-list main-menu-first-level-unordered-list-width">
         
         <?php foreach ($menuItemArray as $firstLevelItem) : ?>
 
             <li<?php echo getListItemClass($firstLevelItem, $currentItemDetails, ['main-menu-first-level-list-item']); ?>><a href="<?php echo getMenuUrl($firstLevelItem); ?>" id="<?php echo getHtmlId($firstLevelItem); ?>" class="firstLevelMenu"><b><?php echo __($firstLevelItem['menuTitle']) ?></b></a>
 
-            <ul>
+            
             <?php if (count($firstLevelItem['subMenuItems']) > 0) : ?>            
-                    
+                <ul> 
                     <?php foreach ($firstLevelItem['subMenuItems'] as $secondLevelItem) : ?>
 
                     <li<?php echo getListItemClass($secondLevelItem, $currentItemDetails); ?>><a href="<?php echo getMenuUrl($secondLevelItem); ?>" id="<?php echo getHtmlId($secondLevelItem); ?>"<?php echo getSubMenuIndication($secondLevelItem); ?>><?php echo __($secondLevelItem['menuTitle']) ?></a>
@@ -91,13 +91,14 @@ function getHtmlId($menuItem) {
                         </li>   
                     
                     <?php endforeach; ?>
+                </ul>
             <?php else: 
                 // Empty li to add an orange bar and maintain uniform look.
             ?>                        
-                        <li></li>
+                        <!-- <li></li> -->
             <?php endif; ?>
                 
-                </ul> <!-- second level -->                        
+                 <!-- second level -->                        
             </li>
             
         <?php endforeach; ?>

@@ -93,6 +93,7 @@ textarea {
 	display:none;
 	min-width:122px;
 }
+
 #welcome-menu li a {
 	color:#fff;
 	line-height:20px;
@@ -138,31 +139,34 @@ textarea {
 
 /* ================ Main menu styles: Begin ================ */
 .menu {
-	height:40px;
-	background:url(../images/nav-bg.png) left bottom repeat-x;
-	position:relative;
+	margin: 0;
+  	position: fixed;
+  	height: 100%;
+  	overflow: auto;
+	top: 3rem;
+	padding:1.5rem 0 0 1rem;
+	background-color: white;
+	width: 200px;
 	z-index:10;
 }
-/*
-.nocurrent {
-	z-index:30;
-}
-.homecurrent {
-	z-index:20;
-}
-*/
+
 .menu ul {
-	padding:0;
+	padding: 0;
 	margin:0;
+	flex-direction: column;
 	list-style:none;
-	padding:0 25px;
 }
+
 .menu > ul {
 	float:left;
+	width: 100%;
 }
+
 .menu > ul > li {
 	float:left;
-	margin-right:5px;
+	width: auto;
+	margin-left: 0.5rem;
+	margin-right: 1rem;
 }
 .menu > ul > li > a {
 	display:block;
@@ -194,11 +198,11 @@ textarea {
 .menu > ul > li > ul {
 	position:absolute;
 	left:-9999px;
-	height:36px;
+	height:auto;
     background:#d8d8d8;
 	opacity:0;
 	padding:4px 0 0 25px;
-	width:100%;
+	width:150px;
 	-moz-transition: opacity 0.5s;
 	-ms-transition: opacity 0.5s;
 	-o-transition: opacity 0.5s;
@@ -209,7 +213,6 @@ textarea {
     position:absolute;
     left:-9999px;
     height:36px;
-    background:url(../images/sub-nav.png) left bottom repeat-x;
     opacity:0;
     padding:4px 0 0 25px;
     width:100%;
@@ -260,6 +263,7 @@ textarea {
 	left:-9999px;
 	background:#555657;
 	padding:10px;
+	opacity: 1;
 	-moz-border-radius-topright: 3px;
 	-webkit-border-top-right-radius: 3px;
 	border-top-right-radius: 3px;
@@ -272,7 +276,7 @@ textarea {
 }
 .menu > ul > li > ul > li > ul > li > a {
 	display:block;
-	color:#ababab;
+	color:white;
 	text-decoration:none;
 	padding:3px 5px 3px 0;
 	white-space:nowrap;
@@ -290,7 +294,7 @@ textarea {
 	direction:ltr;
 }
 .menu > ul > li:hover > ul {
-	left:0;
+	left:200px;
 	opacity:1;
 }
 .menu > ul > li > ul > li:hover > a {
@@ -300,8 +304,9 @@ textarea {
 	background:#555657 url(../images/sub-nav-arrow-s.png) no-repeat 92% 48%;
 }
 .menu > ul > li > ul > li:hover > ul {
-	left:0px;
-	top:27px;
+	left:147px;
+	top: 0px;
+	z-index: 1030;
 	-moz-transform: scaleY(1);
 	-ms-transform: scaleY(1);
 	-o-transform: scaleY(1);
@@ -312,11 +317,10 @@ textarea {
 	color:#fff;
 }
 .menu > ul > li.current > a {
-	background:#f28c38;
-	color:#fff;
+	background:#ededed;
+	color: black;
 }
 .menu > ul > li.current > a b {
-	background:#f28c38;
 }
 .menu > ul > li.current > ul {
 	left:0;
@@ -354,6 +358,30 @@ textarea {
 .menu > ul > li > ul > li.current > ul {
 	left:0;
 	opacity:1;
+}
+
+/* ================ make the Main menu responsive ================ */
+@media screen and (max-width: 1000px) {
+	.menu {
+	  width: 100%;
+	  height: auto;
+	  position: relative;
+	}
+	.menu ul {float: left;
+	flex-direction: row;}
+	.container {margin-left: 0 !important;}
+}
+  
+@media screen and (max-width: 600px) {
+	.menu ul {
+		text-align: center;
+		float: left;
+		flex-wrap: wrap;
+	}
+	.menu ul li {
+		float: left !important;
+		width: 100% !important;
+	}
 }
 /* ================ Main menu styles: End ================ */
 
