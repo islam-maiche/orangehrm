@@ -1,3 +1,17 @@
+<style type="text/css">
+    .titlePending {
+        padding-left: 1rem;
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
+        font-size: 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: start;
+    }
+</style>
+<div class="titlePending">
+    <?php echo __('Pending Leave Requests'); ?>
+</div>
 <?php $recCount = count($leaveList); ?>
 <div id="task-list-group-panel-container" class="" style="height:100%; ">
     <div id="task-list-group-panel-menu_holder" class="task-list-group-panel-menu_holder" style="height:85%; overflow-x: hidden; overflow-y: auto;">
