@@ -153,6 +153,7 @@ textarea {
 .menu ul {
 	padding: 0;
 	margin:0;
+	display: flex;
 	flex-direction: column;
 	list-style:none;
 }
@@ -390,6 +391,10 @@ textarea {
 	/* min-width:940px; */
 	overflow:hidden;
 }
+
+.container {
+	margin-left: 210px;
+}
 #content {
 	padding-top:35px;
 }
@@ -419,9 +424,7 @@ textarea {
 	overflow:hidden;
 }
 .box .inner {
-	background:#f7f6f6;
 	padding:15px;
-	border:1px solid #dedede;
 	border-top:none;
 	-moz-border-radius-bottomright: 3px;
 	-webkit-border-bottom-right-radius: 3px;
@@ -433,6 +436,7 @@ textarea {
 	margin-bottom:19px;
 }
 .box .head {
+	background-color: transparent !important;
 	position:relative;
 }
 .box .head h1 {
@@ -1806,8 +1810,7 @@ div.personalDetails {
 
 /* ================ Panel styles: Begin ================ */
 .panel_resizable {
-	border: #F28C38 2px solid;
-	overflow: hidden !important;
+	overflow: visible !important;
 	margin: 0;
 	/*  padding: 10px;*/
 }

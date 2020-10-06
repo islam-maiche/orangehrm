@@ -50,15 +50,15 @@ class indexAction extends BaseDashboardAction {
     public function getQuickLaunch() {
         $quicklaunch = array(
             'attributes' => array('title' => "",
-                'width' => 1100,
-                'height' => 120,
+                'width' => '100%',
+                'height' => '100%',
                 'permissions' => array(1, 2, 3, 4, 5, 6, 7)),
             'name' => 'QuickLaunch',
             'panels' => array(array(
                     'name' => 'Quick Launch',
                     'attributes' => array(
-                        'width' => 'auto',
-                        'height' => 90.8,
+                        'width' => '100%',
+                        // 'height' => 90.8,
                         'module_name' => 'dashboard',
                         'action_name' => 'quickLaunchPanel',
                         'top' => 4,
@@ -77,8 +77,9 @@ class indexAction extends BaseDashboardAction {
             $allowedPanels = array(array(
                     'name' => 'Employee Distribution by Subunit',
                     'attributes' => array(
-                        'width' => 300,
-                        'height' => 281,
+                        'width' => '40%',
+                        // 'width' => 300,
+                        'height' => '281px',
                         'module_name' => 'dashboard',
                         'action_name' => 'employeeDistribution',
                         'top' => 0,
@@ -87,22 +88,11 @@ class indexAction extends BaseDashboardAction {
                         'loadDefault' => 'false'
                     )),
                 array(
-                    'name' => 'Legend',
-                    'attributes' => array(
-                        'width' => 300,
-                        'height' => 281,
-                        'module_name' => 'dashboard',
-                        'action_name' => 'baseLegend',
-                        'top' => 0,
-                        'left' => 13,
-                        'ohrm_module' => 'pim',
-                        'loadDefault' => 'true'
-                    )),
-                array(
                     'name' => 'Pending Leave Requests',
                     'attributes' => array(
-                        'width' => 300,
-                        'height' => 281,
+                        'width' => '60%',
+                        // 'width' => 300,
+                        'height' => '281px',
                         'module_name' => 'dashboard',
                         'action_name' => 'pendingLeaveRequests',
                         'top' => 0,
@@ -114,8 +104,8 @@ class indexAction extends BaseDashboardAction {
             $allowedPanels = array(array(
                     'name' => 'Pending Leave Requests',
                     'attributes' => array(
-                        'width' => 300,
-                        'height' => 281,
+                        // 'width' => 300,
+                        // 'height' => 281,
                         'module_name' => 'dashboard',
                         'action_name' => 'pendingLeaveRequests',
                         'top' => 0,
@@ -127,7 +117,7 @@ class indexAction extends BaseDashboardAction {
 
         $graphPanel = array(
             'attributes' => array('title' => "",
-                'width' => 1100,
+                // 'width' => 1100,
                 'height' => 300,
                 'permissions' => array(1, 3)),
             'name' => 'Graphs',
