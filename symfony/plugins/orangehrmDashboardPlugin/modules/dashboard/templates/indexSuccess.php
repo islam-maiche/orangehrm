@@ -34,6 +34,7 @@
         clear: both;
         display: table;
     }
+    /* =========== make panel_draggable_1_* responsive =========== */
     /* For mobile phones: */
     [id*="panel_draggable_1"] {
     width: 100% !important;
